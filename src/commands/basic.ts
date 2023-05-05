@@ -58,8 +58,8 @@ export const basic = {
   /**
    * Print command usage
    */
-  help<T extends boolean>(this: This, params: { command: string }, log?: T) {
-    return this.request<T>(`help ${params.command}`, log);
+  help<T extends boolean>(this: This, params: { command?: string }, log?: T) {
+    return this.request<T>(`help ${params.command ?? ''}`, log);
   },
 
   /**
