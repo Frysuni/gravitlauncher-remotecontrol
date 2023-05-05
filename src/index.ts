@@ -26,8 +26,9 @@ export class GravitLauncherRemoteControlCore {
   }
 
   public import<T extends CommandModule>(commands: T): this is this & T {
+    const token = this.token;
     for (const command in commands) {
-      this[command as string] = commands[command].bind({ token: this.token, rawUrl: this.rawUrl, request: this.request, import: this.import });
+      this[command as string] = commands[command].bind({ token, rawUrl: this.rawUrl, request: this.request, import: this.import });
       if (!this[command as string] || typeof this[command as string] !== 'function') return false;
     }
     return true;

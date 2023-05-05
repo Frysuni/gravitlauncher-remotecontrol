@@ -1,7 +1,7 @@
 {
   "name": "gravitlauncher-remotecontrol-js",
   "description": "GravitLauncher RemoteControl module nodejs implementation",
-  "version": "0.0.0-alpha0.0.1.1-pls-do-not-download-ahaha",
+  "version": "0.0.0-alpha0.0.1.2-pls-do-not-download-ahaha",
   "author": "Frys",
   "readme": "README.md",
   "main": "build/index.js",
