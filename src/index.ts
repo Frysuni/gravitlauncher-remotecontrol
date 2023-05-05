@@ -35,3 +35,9 @@ export class GravitLauncherRemoteControlCore {
 
 export * from 'commands';
 export * from 'core';
+
+export function init<T extends CommandModule>(rawUrl: string, token: string, commands: T): GravitLauncherRemoteControlCore & T {
+  const core = new GravitLauncherRemoteControlCore(rawUrl, token);
+  core.import(commands);
+  return core as GravitLauncherRemoteControlCore & T;
+}
