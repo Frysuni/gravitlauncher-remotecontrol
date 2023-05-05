@@ -1,0 +1,28 @@
+{
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "test*", "build"],
+
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES6",
+    "inlineSources": true,
+    "inlineSourceMap": true,
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "esModuleInterop": true,
+    "incremental": false,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "resolveJsonModule": true,
+    "typeRoots": ["node_modules/@types"],
+    "moduleResolution": "node",
+  }
+}

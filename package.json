@@ -1,0 +1,39 @@
+{
+  "name": "gravitlauncher-remotecontrol-js",
+  "description": "GravitLauncher RemoteControl module nodejs implementation",
+  "version": "0.0.0",
+  "author": "Frys",
+  "readme": "README.md",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --build --clean && tsc",
+    "lint": "eslint --ext .ts"
+  },
+  "files": [
+    "build"
+  ],
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {},
+  "keywords": [
+    "gravitlauncher",
+    "gravit",
+    "launcher",
+    "remotecontrol_module",
+    "remotecontrol",
+    "remote",
+    "control",
+    "module"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Frysuni/gravitlauncher-remotecontrol-js.git"
+  }
+}
