@@ -13,6 +13,7 @@ export class GravitLauncherRemoteControlCore {
       token: this.token,
       command, log
     };
+
     const extractDataOptions: ExtractDataOptions<LogEnabled> = {
       onError(error) { throw error; },
       onException(exception) { throw exception; },
@@ -26,15 +27,16 @@ export class GravitLauncherRemoteControlCore {
 
   public import<T extends CommandModule>(commands: T): this is this & T {
     for (const command in commands) {
-      this[command as string] = commands[command].bind(this);
+      this[command as string] = commands[command].bind({ token: this.token, rawUrl: this.rawUrl, request: this.request, import: this.import });
       if (!this[command as string] || typeof this[command as string] !== 'function') return false;
     }
     return true;
   }
 }
 
-export * from 'commands';
-export * from 'core';
+
+export * as commands from './commands';
+export * from './core';
 
 export function init<T extends CommandModule>(rawUrl: string, token: string, commands: T): GravitLauncherRemoteControlCore & T {
   const core = new GravitLauncherRemoteControlCore(rawUrl, token);
